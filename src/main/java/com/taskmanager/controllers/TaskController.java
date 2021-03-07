@@ -26,6 +26,30 @@ public class TaskController {
         return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
 
+    @GetMapping("/current")
+    public ResponseEntity<List<Task>> getCurrentTasks(){
+        List<Task> tasks = taskService.getAllTasks();
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
+
+    @GetMapping("/closed")
+    public ResponseEntity<List<Task>> getClosedTasks(){
+        List<Task> tasks = taskService.getAllTasks();
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
+
+    @GetMapping("/today")
+    public ResponseEntity<List<Task>> getAllTasksForToday(){
+        List<Task> tasks = taskService.getAllTasks();
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
+
+    @GetMapping("delayed")
+    public ResponseEntity<List<Task>> getAllDelayedTasks(){
+        List<Task> tasks = taskService.getAllTasks();
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
+
     @PostMapping()
     public ResponseEntity<String> createTask(@RequestBody CreateTaskDto createTaskDto){
         Task task = modelMapper.map(createTaskDto, Task.class);
