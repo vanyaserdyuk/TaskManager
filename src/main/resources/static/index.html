@@ -6,7 +6,21 @@
 </head>
 <body>
 <h1>Hello, this is my task manager. You can do this:</h1>
-<button type="button" onclick="">Get all tasks</button>
+<button type="button" onclick="getAllTasks()">Get all tasks</button>
+<ul id="taskArea">
 
+</ul>
+<form id="usernameForm" name="usernameForm">
+    <div class="form-group">
+        <input type="text" id="taskName" placeholder="Task name" autocomplete="off" class="form-control" />
+        <input type="text" id="taskDescription" placeholder="Description" autocomplete="off" class="form-control" />
+        <input type="text" id="taskTime" placeholder="Execute until" autocomplete="off" class="form-control" />
+        <button type="submit" class="create task-submit" onclick="createTask()">Create task</button>
+    </div>
+</form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
