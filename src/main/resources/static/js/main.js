@@ -9,18 +9,22 @@ function createTask(){
         "time": $('#taskTime').val()
     }
 
+
+    let jsonTask = JSON.stringify(task);
+
     $.ajax({
         url: 'api/tasks',
         method: 'POST',
-        data: task,
+        data: jsonTask,
+        dataType: "json",
+        contentType : "application/json"
     });
 }
 
 function getAllTasks(){
     $.ajax({
         url: 'api/tasks',
-        method: 'GET',
-        data: task,
+        method: 'GET'
     }).done(({content}) => {content.forEach(
         function printTasks(currentContent){
             var messageElement = addTask(currentContent);
